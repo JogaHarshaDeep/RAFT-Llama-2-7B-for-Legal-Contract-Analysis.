@@ -1,0 +1,32 @@
+# RAFT Fine-Tuning with QLoRA Requirements
+# Core ML Libraries
+torch>=2.0.0
+transformers>=4.30.0
+datasets>=2.10.0
+scikit-learn>=1.2.0
+pandas>=1.5.0
+numpy>=1.23.0
+
+# QLoRA + PEFT (REQUIRED FOR RAFT_with_QLoRA.py)
+peft>=0.4.0                           # Parameter-efficient fine-tuning with LoRA
+bitsandbytes>=0.40.0                  # 4-bit quantization support
+
+# Training & Optimization
+accelerate>=0.20.0                    # Distributed training support
+wandb>=0.14.0                         # Logging (optional)
+
+# Optional: For faster inference
+flash-attn>=2.0.0                     # Flash attention (improves speed)
+
+# Utilities
+tqdm>=4.65.0
+sentencepiece>=0.1.99
+tokenizers>=0.13.0
+
+# Notes:
+# - bitsandbytes is ESSENTIAL for QLoRA (4-bit quantization)
+# - peft is ESSENTIAL for LoRA adapters
+# - flash-attn is OPTIONAL but recommended for 10-15% speed improvement
+# 
+# Install with:
+# pip install -r requirements.txt
